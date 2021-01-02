@@ -32,16 +32,13 @@ func showStatus() {
 	printInventory()
 }
 
-type dir2Room struct {
-	direction string
-	room      string
-}
+type direction2Room map[string]string
 
 var inventory = mapset.NewSet()
 
-var rooms = map[string]dir2Room{
-	"Hall":    dir2Room{"south", "Kitchen"},
-	"Kitchen": dir2Room{"north", "Hall"},
+var rooms = map[string]direction2Room{
+	"Hall":    direction2Room{"south": "Kitchen"},
+	"Kitchen": direction2Room{"north": "Hall"},
 }
 
 func handleGo(dir string) {

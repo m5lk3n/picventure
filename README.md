@@ -14,4 +14,5 @@ See [original](original/rpg-rpg.py) sources locally.
 
 ## ideas
 
+- get random item like a skin
 - add-on: visualization of position
