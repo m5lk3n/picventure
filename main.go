@@ -18,7 +18,7 @@ Commands:
 }
 
 func printRoom() {
-	fmt.Println("You are in the " + currentRoom)
+	fmt.Println("You are in the", currentRoom)
 }
 
 func printInventory() {
@@ -48,6 +48,10 @@ var rooms = map[string]direction2Room{
 	"Kitchen": direction2Room{"north": "Hall"},
 }
 
+var items = map[string]string{
+	"Hall": "key",
+}
+
 func handleGo(direction string) {
 	if newRoom, ok := rooms[currentRoom][direction]; ok {
 		currentRoom = newRoom
@@ -57,7 +61,15 @@ func handleGo(direction string) {
 }
 
 func handleGet(item string) {
-	fmt.Println(item) // TODO: implement
+	if roomItem, ok := items[currentRoom]; ok {
+		if item == roomItem {
+			inventory.Add(item)
+			delete(items, currentRoom)
+			return
+		}
+	}
+
+	fmt.Printf("Can't get %s!\n", item)
 }
 
 func handleExit() {
@@ -75,7 +87,6 @@ func main() {
 	for {
 		showStatus()
 
-		// input
 		fmt.Print(">")
 		input, _ := reader.ReadString('\n')
 		input = strings.Trim(input, " \n")
@@ -93,13 +104,14 @@ func main() {
 		}
 
 		switch verb {
-		case "go": // TODO: introduce constant
+		case "go":
 			handleGo(noun)
+		case "get":
+			handleGet(noun)
 		case "exit":
 			handleExit()
 		default:
 			// not understood
 		}
-
 	}
 }

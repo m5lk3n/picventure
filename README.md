@@ -8,9 +8,17 @@ See [original](original/rpg-rpg.py) sources locally.
 
 `$ go get github.com/deckarep/golang-set`
 
-## open
+## to do
 
 - makefile
+- TODOs in code
+- introduce enums
+- introduce constants
+
+## open
+
+- `input = strings.TrimRight`?
+- support Windows by using `input = strings.Trim(input, "\r\n")`
 
 ## ideas
 
