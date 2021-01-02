@@ -17,19 +17,26 @@ Commands:
   get [item]`)
 }
 
-func printInventory() {
-	it := inventory.Iterator()
-
-	for elem := range it.C {
-		fmt.Print(elem)
-	}
-}
-func showStatus() {
-	// print the player's current status
-	fmt.Println("---------------------------")
+func printRoom() {
 	fmt.Println("You are in the " + currentRoom)
-	fmt.Println("Inventory: ")
+}
+
+func printInventory() {
+	fmt.Print("Inventory:")
+
+	items := inventory.Iterator()
+	for item := range items.C {
+		fmt.Print(" ", item)
+	}
+
+	fmt.Println()
+}
+
+func showStatus() {
+	fmt.Println("---------------------------")
+	printRoom()
 	printInventory()
+	fmt.Println("---------------------------")
 }
 
 type direction2Room map[string]string
