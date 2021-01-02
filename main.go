@@ -41,11 +41,11 @@ var rooms = map[string]direction2Room{
 	"Kitchen": direction2Room{"north": "Hall"},
 }
 
-func handleGo(dir string) {
-	fmt.Println("debug")
-	if d2R, ok := rooms[currentRoom]; ok {
-		newRoom := d2R
-		fmt.Println("new ", newRoom)
+func handleGo(direction string) {
+	if newRoom, ok := rooms[currentRoom][direction]; ok {
+		currentRoom = newRoom
+	} else {
+		fmt.Println("You can't go that way!")
 	}
 }
 
