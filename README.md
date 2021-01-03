@@ -1,8 +1,8 @@
 # RPG
 
-A text adventure inspired by https://rpf.io/rpg-code, implemented in go.
+The RPG text adventure from https://projects.raspberrypi.org/en/projects/rpg implemented in go.
 
-See [original](original/rpg-rpg.py) sources locally.
+See [original](https://rpf.io/rpg-code) base sources [locally](original/rpg-rpg.py).
 
 ## prereqs
 

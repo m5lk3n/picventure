@@ -19,6 +19,9 @@ Commands:
 
 func printRoom() {
 	fmt.Println("You are in the", currentRoom)
+	if roomItem, ok := items[currentRoom]; ok {
+		fmt.Println("You see a", roomItem)
+	}
 }
 
 func printInventory() {
@@ -44,8 +47,9 @@ type direction2Room map[string]string
 var inventory = mapset.NewSet()
 
 var rooms = map[string]direction2Room{
-	"Hall":    direction2Room{"south": "Kitchen"},
-	"Kitchen": direction2Room{"north": "Hall"},
+	"Hall":        direction2Room{"south": "Kitchen", "east": "Dining Room"},
+	"Kitchen":     direction2Room{"north": "Hall"},
+	"Dining Room": direction2Room{"west": "Hall"},
 }
 
 var items = map[string]string{
@@ -55,9 +59,10 @@ var items = map[string]string{
 func handleGo(direction string) {
 	if newRoom, ok := rooms[currentRoom][direction]; ok {
 		currentRoom = newRoom
-	} else {
-		fmt.Println("You can't go that way!")
+		return
 	}
+
+	fmt.Println("You can't go that way!")
 }
 
 func handleGet(item string) {
@@ -87,7 +92,7 @@ func main() {
 	for {
 		showStatus()
 
-		fmt.Print(">")
+		fmt.Print("> ")
 		input, _ := reader.ReadString('\n')
 		input = strings.Trim(input, " \n")
 		input = strings.ToLower(input)
