@@ -14,8 +14,7 @@ View [original base source](https://rpf.io/rpg-code) [locally](originals/rpg-rpg
 
 ## to do
 
-- makefile
-- introduce enums
+- introduce enums (https://www.ribice.ba/golang-enums/)
 - introduce constants
 - improve `inventory.Contains` check
 
