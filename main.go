@@ -12,6 +12,10 @@ import (
 func showInstructions() {
 	fmt.Println(`RPG Game
 ========
+
+Get to the Garden with a key and a potion
+Avoid the monsters!
+
 Commands:
   go [direction]
   get [item]`)
@@ -49,16 +53,33 @@ var inventory = mapset.NewSet()
 var rooms = map[string]direction2Room{
 	"Hall":        direction2Room{"south": "Kitchen", "east": "Dining Room"},
 	"Kitchen":     direction2Room{"north": "Hall"},
-	"Dining Room": direction2Room{"west": "Hall"},
+	"Dining Room": direction2Room{"west": "Hall", "south": "Garden"},
+	"Garden":      direction2Room{"north": "Dining Room"},
 }
 
 var items = map[string]string{
-	"Hall": "key",
+	"Hall":        "key",
+	"Kitchen":     "monster",
+	"Dining Room": "potion",
 }
 
 func handleGo(direction string) {
 	if newRoom, ok := rooms[currentRoom][direction]; ok {
 		currentRoom = newRoom
+
+		// player loses if they enter a room with a monster
+		if roomItem, ok := items[currentRoom]; ok {
+			if roomItem == "monster" {
+				fmt.Println("A monster has got you... GAME OVER!")
+				os.Exit(0)
+			}
+		}
+
+		if currentRoom == "Garden" && inventory.Contains("key") && inventory.Contains("potion") {
+			fmt.Println("You escaped the house... YOU WIN!")
+			os.Exit(0)
+		}
+
 		return
 	}
 
