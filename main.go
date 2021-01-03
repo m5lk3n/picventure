@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"log"
 	"os"
 	"strings"
 
@@ -17,8 +18,9 @@ Get to the Garden with a key and a potion
 Avoid the monsters!
 
 Commands:
-  go [direction]
-  get [item]`)
+  go "direction"	(where "direction" is one of the following: north, east, south, west)
+  get "item"
+  exit`)
 }
 
 func printRoom() {
@@ -44,6 +46,19 @@ func showStatus() {
 	printRoom()
 	printInventory()
 	fmt.Println("---------------------------")
+}
+
+func confirmExit() bool {
+	fmt.Print("Do you really want to exit the Game? [y/n] ")
+
+	reader := bufio.NewReader(os.Stdin)
+	input, err := reader.ReadString('\n')
+	if err != nil {
+		log.Fatal(err)
+	}
+	input = strings.ToLower(strings.TrimSpace(input))
+
+	return input == "y" || input == "yes"
 }
 
 type direction2Room map[string]string
@@ -99,8 +114,9 @@ func handleGet(item string) {
 }
 
 func handleExit() {
-	// TODO: add confirmation
-	os.Exit(0)
+	if confirmExit() {
+		os.Exit(0)
+	}
 }
 
 // start the player in the Hall
@@ -114,7 +130,10 @@ func main() {
 		showStatus()
 
 		fmt.Print("> ")
-		input, _ := reader.ReadString('\n')
+		input, err := reader.ReadString('\n')
+		if err != nil {
+			log.Fatal(err)
+		}
 		input = strings.Trim(input, " \n")
 		input = strings.ToLower(input)
 		move := strings.Split(input, " ")

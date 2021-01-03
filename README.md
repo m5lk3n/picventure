@@ -15,7 +15,6 @@ View [original base source](https://rpf.io/rpg-code) [locally](originals/rpg-rpg
 ## to do
 
 - makefile
-- TODOs in code
 - introduce enums
 - introduce constants
 - improve `inventory.Contains` check
