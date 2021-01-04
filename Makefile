@@ -5,9 +5,9 @@ help:
 	@echo
 	@echo "  where <target> is one of the following"
 	@echo
-	@echo "    get         to fetch all dependencies"
+	@echo "    get         to fetch all package dependencies"
 	@echo "    build       to compile binary for local machine architecture"
-	@echo "    all         to run get, build"
+	@echo "    all         to run all targets"
 	@echo
 	@echo "    help        to show this text"
 
@@ -17,7 +17,7 @@ get:
 
 .PHONY: build
 build:
-	go build
+	go build -o rpg
 
 .PHONY: all
 all: get build

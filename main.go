@@ -18,7 +18,7 @@ Get to the Garden with a key and a potion
 Avoid the monsters!
 
 Commands:
-  go "direction"	(where "direction" is one of the following: north, east, south, west)
+  go "direction"    (where "direction" is one of the following: north, east, south, west)
   get "item"
   exit`)
 }
