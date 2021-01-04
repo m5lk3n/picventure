@@ -56,9 +56,11 @@ Inventory:
 > 
 ```
 
-## Demo (**spoiler alert!**)
+## Demo
 
-![make and play](spoiler.gif)
+**Spoiler alert!**
+
+![Make and play](spoiler.gif)
 
 ## Originals
 
