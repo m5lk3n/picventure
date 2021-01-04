@@ -56,6 +56,10 @@ Inventory:
 > 
 ```
 
+## Demo (**spoiler alert!**)
+
+![make and play](spoiler.gif)
+
 ## Originals
 
 View [original base source](https://rpf.io/rpg-code) [locally](originals/rpg-rpg.py).
