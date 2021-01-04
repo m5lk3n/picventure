@@ -25,5 +25,6 @@ View [original base source](https://rpf.io/rpg-code) [locally](originals/rpg-rpg
 
 ## ideas
 
+- save/load game
 - get random item like a skin
 - add-on: visualization of position
