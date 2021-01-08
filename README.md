@@ -84,7 +84,6 @@ The [map](https://projects-static.raspberrypi.org/projects/rpg/31fb9012c6d897ad1
 
 ## Ideas
 
-- use [PTerm](https://github.com/pterm/pterm)
 - save/load game
 - 3 dimensions: up/down via stairs
 - get random item like a skin
