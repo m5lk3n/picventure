@@ -2,7 +2,7 @@
 
 The RPG text adventure project from under [raspberrypi.org](https://projects.raspberrypi.org/en/projects/rpg) implemented in Go for educational purposes.
 
-## Development environment
+## Environments
 
 Developed on a [Raspberry Pi 400](https://www.raspberrypi.org/products/raspberry-pi-400/):
 
@@ -11,6 +11,15 @@ $ uname -a
 Linux raspi400 5.8.0-1010-raspi #13-Ubuntu SMP PREEMPT Wed Dec 9 17:14:07 UTC 2020 aarch64 aarch64 aarch64 GNU/Linux
 $ go version
 go version go1.14.7 linux/arm64
+```
+
+Also tested on a Lenovo ThinkPad X250:
+
+```bash
+$ uname -a
+Linux x250 4.15.0-128-generic #131-Ubuntu SMP Wed Dec 9 06:57:35 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+$ go version
+go version go1.15.6 linux/amd64
 ```
 
 ## Make
@@ -72,7 +81,7 @@ The [map](https://projects-static.raspberrypi.org/projects/rpg/31fb9012c6d897ad1
 
 ## To do
 
-- introduce enums (https://www.ribice.ba/golang-enums/)
+- introduce [enums](https://www.ribice.ba/golang-enums/)
 - introduce constants
 - improve `inventory.Contains` check
 
