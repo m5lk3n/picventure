@@ -40,6 +40,8 @@ usage: make <target>
 ```bash
 $ make all
 go get github.com/deckarep/golang-set
+go get github.com/pterm/pterm
+go get github.com/sirupsen/logrus
 go build -o rpg
 ```
 
@@ -79,8 +81,13 @@ The [map](https://projects-static.raspberrypi.org/projects/rpg/31fb9012c6d897ad1
 
 ![Final Map](originals/rpg-final-map.png "Final Map")
 
+## At work
+
+- [lights-on](ideas/lights-on.py) idea...
+
 ## To do
 
+- renew screenshots
 - introduce [enums](https://www.ribice.ba/golang-enums/)
 - introduce constants
 - improve `inventory.Contains` check
@@ -93,7 +100,6 @@ The [map](https://projects-static.raspberrypi.org/projects/rpg/31fb9012c6d897ad1
 
 ## Ideas
 
-- [lights-on](ideas/lights-on.py)
 - save/load game
 - 3 dimensions: up/down via stairs
 - get random item like a skin
