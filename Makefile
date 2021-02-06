@@ -14,6 +14,8 @@ help:
 .PHONY: get
 get:
 	go get github.com/deckarep/golang-set
+	go get github.com/pterm/pterm
+	go get github.com/sirupsen/logrus
 
 .PHONY: build
 build:
