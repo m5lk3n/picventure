@@ -72,7 +72,7 @@ The [map](https://projects-static.raspberrypi.org/projects/rpg/31fb9012c6d897ad1
 
 ## To do
 
-- introduce enums (https://www.ribice.ba/golang-enums/)
+- introduce [enums](https://www.ribice.ba/golang-enums/)
 - introduce constants
 - improve `inventory.Contains` check
 
@@ -85,6 +85,7 @@ The [map](https://projects-static.raspberrypi.org/projects/rpg/31fb9012c6d897ad1
 ## Ideas
 
 - use [PTerm](https://github.com/pterm/pterm)
+- [lights-on](ideas/lights-on.py)
 - save/load game
 - 3 dimensions: up/down via stairs
 - get random item like a skin
