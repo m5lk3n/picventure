@@ -30,25 +30,33 @@ usage: make <target>
 
   where <target> is one of the following
 
-    get         to fetch all dependencies
-    build       to compile binary for local machine architecture
-    all         to run get, build
+    all         to run all on both, picservice and rpg
 
     help        to show this text
 ```
 
 ```bash
 $ make all
-go get github.com/deckarep/golang-set
-go get github.com/pterm/pterm
-go get github.com/sirupsen/logrus
-go build -o rpg
+# ...
 ```
 
 ## Play
 
+### Start picservice
+
+Open a shell in this directory, then:
+
 ```bash
-$ ./rpg 
+$ cd picservice && GIN_MODE=release ./picservice
+INFO[0000] picservice start...
+```
+
+### Start picventure
+
+Open a separate shell in this directory, then:
+
+```bash
+$ cd rpg && ./picventure 
 Picventure - A colorful RPG Adventure with Pictures
 ===================================================
 
@@ -72,6 +80,10 @@ Inventory:
 **Spoiler alert!**
 
 ![Make and play](spoiler.gif)
+
+When you encounter a key:
+
+![Key](sense/key-on-sense.png)
 
 ## Originals
 
