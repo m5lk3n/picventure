@@ -49,8 +49,8 @@ go build -o rpg
 
 ```bash
 $ ./rpg 
-RPG Game
-========
+Picventure - A colorful RPG Adventure with Pictures
+===================================================
 
 Get to the Garden with a key and a potion
 Avoid the monsters!
@@ -83,11 +83,12 @@ The [map](https://projects-static.raspberrypi.org/projects/rpg/31fb9012c6d897ad1
 
 ## At work
 
-- [lights-on](ideas/lights-on.py) idea...
+- [picservice](picservice/README.md)
+- picventure
+- renew screenshots
 
 ## To do
 
-- renew screenshots
 - introduce [enums](https://www.ribice.ba/golang-enums/)
 - introduce constants
 - improve `inventory.Contains` check

@@ -23,7 +23,7 @@ func init() {
 }
 
 func showInstructions() {
-	pterm.DefaultHeader.Println("RPG Game")
+	pterm.DefaultHeader.Println("Picventure - A colorful RPG Adventure with Pictures")
 	pterm.FgLightCyan.Println(`Get to the Garden with a key and a potion
 Avoid the monsters!
 
@@ -76,10 +76,10 @@ type direction2Room map[string]string
 var inventory = set.NewSet()
 
 var rooms = map[string]direction2Room{
-	"Hall":        direction2Room{"south": "Kitchen", "east": "Dining Room"},
-	"Kitchen":     direction2Room{"north": "Hall"},
-	"Dining Room": direction2Room{"west": "Hall", "south": "Garden"},
-	"Garden":      direction2Room{"north": "Dining Room"},
+	"Hall":        {"south": "Kitchen", "east": "Dining Room"},
+	"Kitchen":     {"north": "Hall"},
+	"Dining Room": {"west": "Hall", "south": "Garden"},
+	"Garden":      {"north": "Dining Room"},
 }
 
 var items = map[string]string{
