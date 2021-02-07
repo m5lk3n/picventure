@@ -3,6 +3,8 @@ package main
 import (
 	"bufio"
 	"flag"
+	"fmt"
+	"net/http"
 	"os"
 	"strings"
 	"time"
@@ -12,8 +14,11 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
+var picserviceURL *string
+
 func init() {
 	debugFlag := flag.Bool("debug", false, "turn debug output on/off")
+	picserviceURL = flag.String("picserviceURL", "http://localhost:8080", "URL of the picservice")
 
 	flag.Parse()
 
@@ -33,10 +38,37 @@ Commands:
   exit`)
 }
 
+func sendScreenRequest(url string) {
+	log.Debugln("calling picservice on %s ...", url)
+
+	//	req, err := http.NewRequest("GET", url, nil)
+	//	if err == nil {
+	//req.Header.Add("Accept", "application/json")
+	//req.Header.Add("Content-Type", "application/json")
+	tr := &http.Transport{
+		IdleConnTimeout: 500 * time.Millisecond,
+	}
+	client := &http.Client{Transport: tr}
+	client.Get(url)
+	//		client.Do(req)
+	//	}
+}
+
+func clearPic() {
+	clearPicURL := fmt.Sprintf("%s/api/v1/screen/clear", *picserviceURL)
+	sendScreenRequest(clearPicURL)
+}
+
+func drawPic(pic string) {
+	drawPicURL := fmt.Sprintf("%s/api/v1/screen/draw/%s", *picserviceURL, pic)
+	sendScreenRequest(drawPicURL)
+}
+
 func printRoom() {
 	pterm.FgLightWhite.Println("You are in the ", currentRoom)
 	if roomItem, ok := items[currentRoom]; ok {
 		pterm.Println("You see a ", roomItem)
+		drawPic(roomItem)
 	}
 }
 
