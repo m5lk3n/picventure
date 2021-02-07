@@ -64,11 +64,19 @@ func drawPic(pic string) {
 	sendScreenRequest(drawPicURL)
 }
 
+func drawAndClearPic(pic string) {
+	drawPic(pic)
+	time.Sleep(3 * time.Second)
+	clearPic()
+}
+
 func printRoom() {
 	pterm.FgLightWhite.Println("You are in the ", currentRoom)
 	if roomItem, ok := items[currentRoom]; ok {
 		pterm.Println("You see a ", roomItem)
 		drawPic(roomItem)
+	} else {
+		clearPic()
 	}
 }
 
@@ -139,6 +147,7 @@ func handleGo(direction string) {
 					Style: pterm.NewStyle(pterm.BgRed, pterm.FgWhite),
 				}
 				spinner.Fail("A monster has got you...")
+				drawAndClearPic("monster")
 				os.Exit(0)
 			}
 		}
@@ -150,6 +159,7 @@ func handleGo(direction string) {
 					Style: pterm.NewStyle(pterm.BgGreen, pterm.FgWhite),
 				}
 				spinner.Success("You escaped the house...")
+				drawAndClearPic("victory")
 				os.Exit(0)
 			}
 		}

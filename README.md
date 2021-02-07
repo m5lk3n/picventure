@@ -83,7 +83,7 @@ The [map](https://projects-static.raspberrypi.org/projects/rpg/31fb9012c6d897ad1
 
 ## At work
 
-- call picservice in rpg
+- remove originals
 - renew screenshots
 
 ## To do
