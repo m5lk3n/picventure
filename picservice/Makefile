@@ -1,4 +1,3 @@
-
 # default target
 .PHONY: help
 help:
@@ -14,7 +13,7 @@ help:
 
 .PHONY: get
 get:
-    go get github.com/gin-gonic/gin
+	go get github.com/gin-gonic/gin
 	go get github.com/nathany/bobblehat/sense/screen
 	go get github.com/nathany/bobblehat/sense/screen/texture
 	go get github.com/sirupsen/logrus
