@@ -23,7 +23,7 @@ func init() {
 }
 
 func showInstructions() {
-	pterm.DefaultHeader.Println("Picventure - A colorful RPG Adventure with Pictures")
+	pterm.DefaultHeader.Println("Picventure - A colorful RPG adventure (with optional pictures)")
 	pterm.FgLightCyan.Println(`Get to the Garden with a key and a potion
 Avoid the monsters!
 

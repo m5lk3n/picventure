@@ -1,6 +1,5 @@
 # go-related binaries
 __debug_bin
-rpg
 # terminalizer
 node_modules
 package-lock.json

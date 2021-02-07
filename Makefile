@@ -5,21 +5,11 @@ help:
 	@echo
 	@echo "  where <target> is one of the following"
 	@echo
-	@echo "    get         to fetch all package dependencies"
-	@echo "    build       to compile binary for local machine architecture"
-	@echo "    all         to run all targets"
+	@echo "    all         to run all on both, picservice and rpg"
 	@echo
 	@echo "    help        to show this text"
 
-.PHONY: get
-get:
-	go get github.com/deckarep/golang-set
-	go get github.com/pterm/pterm
-	go get github.com/sirupsen/logrus
-
-.PHONY: build
-build:
-	go build -o rpg
-
 .PHONY: all
-all: get build
+all:
+	$(MAKE) -C picservice all
+	$(MAKE) -C rpg all

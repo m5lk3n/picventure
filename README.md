@@ -83,8 +83,7 @@ The [map](https://projects-static.raspberrypi.org/projects/rpg/31fb9012c6d897ad1
 
 ## At work
 
-- [picservice](picservice/README.md)
-- picventure
+- call picservice in rpg
 - renew screenshots
 
 ## To do
