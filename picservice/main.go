@@ -24,7 +24,7 @@ func ScreenClearHandler(c *gin.Context) {
 func ScreenDrawHandler(c *gin.Context) {
 	pic := c.Param("pic")
 	if pic == "" {
-		c.AbortWithStatusJSON(http.StatusBadRequest, gin.H{"message": "malformed requerst", "status": http.StatusBadRequest})
+		c.AbortWithStatusJSON(http.StatusBadRequest, gin.H{"message": "malformed request", "status": http.StatusBadRequest})
 	}
 
 	wd, _ := os.Getwd()
