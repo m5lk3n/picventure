@@ -1,6 +1,6 @@
-# Private go-rpg
+# Picventure
 
-The RPG text adventure project from under [raspberrypi.org](https://projects.raspberrypi.org/en/projects/rpg) implemented in Go for educational purposes.
+The RPG text adventure project from under [raspberrypi.org](https://projects.raspberrypi.org/en/projects/rpg) implemented in Go for educational purposes. It features colors and pictures (on a Sense HAT).
 
 ## Environments
 
