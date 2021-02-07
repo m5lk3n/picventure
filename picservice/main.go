@@ -16,26 +16,25 @@ import (
 func ScreenClearHandler(c *gin.Context) {
 	screen.Clear()
 
-	c.JSON(http.StatusOK, gin.H{"message": "clear", "status": http.StatusOK})
+	c.JSON(http.StatusOK, gin.H{"message": "cleared", "status": http.StatusOK})
 }
 
 // ScreenDrawHandler TODO
 func ScreenDrawHandler(c *gin.Context) {
 
-	wd, err := os.Getwd()
-	if err != nil {
-		log.Fatal(err)
-	}
-
+	wd, _ := os.Getwd()
 	pic := wd + "/pics/key.png"
 
 	tx, err := texture.Load(pic)
 	if err != nil {
-		log.Fatal(err)
+		log.Error(err)
+		c.AbortWithStatusJSON(http.StatusNotFound, gin.H{"message": "requested resource not found", "status": http.StatusNotFound})
 	}
 	fb := screen.NewFrameBuffer()
 	texture.Blit(fb.Texture, 0, 0, tx, 0, 0, 8, 8) // 8x8, starting at 0,0
 	screen.Draw(fb)
+
+	c.JSON(http.StatusOK, gin.H{"message": "drawn", "status": http.StatusOK})
 }
 
 // LivenessHandler TODO
