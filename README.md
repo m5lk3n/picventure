@@ -1,6 +1,6 @@
 # Picventure
 
-The RPG text adventure project from under [raspberrypi.org](https://projects.raspberrypi.org/en/projects/rpg) implemented in Go for educational purposes. It features colors and pictures (on a Sense HAT).
+The RPG text adventure project from under [raspberrypi.org](https://projects.raspberrypi.org/en/projects/rpg) implemented in Go for educational purposes. It features colors (on the terminal) and game pictures (on a Sense HAT). The latter is locally exposed as a "web service" (called "picservice") and loosely coupled to the game implementation. The idea is to also demo microservices to kids.
 
 ## Environments
 
@@ -57,8 +57,8 @@ Open a separate shell in this directory, then:
 
 ```bash
 $ cd rpg && ./picventure 
-Picventure - A colorful RPG Adventure with Pictures
-===================================================
+Picventure - A colorful RPG adventure (with optional pictures)
+==============================================================
 
 Get to the Garden with a key and a potion
 Avoid the monsters!
@@ -87,32 +87,22 @@ When you encounter a key:
 
 ## Originals
 
-View [original base source](https://rpf.io/rpg-code) [locally](originals/rpg-rpg.py).
+- [Python source](https://rpf.io/rpg-code)
+- [Game map](https://projects-static.raspberrypi.org/projects/rpg/31fb9012c6d897ad16f2f245fb4791b6384cda28/en/images/rpg-final-map.png)
 
-The [map](https://projects-static.raspberrypi.org/projects/rpg/31fb9012c6d897ad16f2f245fb4791b6384cda28/en/images/rpg-final-map.png):
+## To do/Open
 
-![Final Map](originals/rpg-final-map.png "Final Map")
-
-## At work
-
-- remove originals
-- renew screenshots
-
-## To do
-
+- remaining Sense pictures
+- map (cheatsheet)
+- add tests
 - introduce [enums](https://www.ribice.ba/golang-enums/)
 - introduce constants
 - improve `inventory.Contains` check
-
-## Open
-
-- tests
 - `input = strings.TrimRight`?
-- support Windows by using `input = strings.Trim(input, "\r\n")`
 
 ## Ideas
 
 - save/load game
 - 3 dimensions: up/down via stairs
-- get random item like a skin
+- find/get a random item (like an in-app purchase)
 - add-on: visualization of position
