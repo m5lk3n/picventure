@@ -41,17 +41,12 @@ Commands:
 func sendScreenRequest(url string) {
 	log.Debugln("calling picservice on %s ...", url)
 
-	//	req, err := http.NewRequest("GET", url, nil)
-	//	if err == nil {
-	//req.Header.Add("Accept", "application/json")
-	//req.Header.Add("Content-Type", "application/json")
+	// "fire and forget" call, ignore any errors, low timeout
 	tr := &http.Transport{
 		IdleConnTimeout: 500 * time.Millisecond,
 	}
 	client := &http.Client{Transport: tr}
 	client.Get(url)
-	//		client.Do(req)
-	//	}
 }
 
 func clearPic() {
