@@ -87,16 +87,15 @@ When you encounter an item or finish the game, the corresponding picture appears
 
 ([from Trinket and the Raspberry Pi Foundation](https://trinket.io/sense-hat))
 
-## Originals
+## Sources
 
 - [Python source](https://rpf.io/rpg-code)
 - [Game map](https://projects-static.raspberrypi.org/projects/rpg/31fb9012c6d897ad16f2f245fb4791b6384cda28/en/images/rpg-final-map.png)
 
 ## To do/Open
 
-- remove terminalizer
-- map (cheatsheet)
 - add tests
+- map (cheatsheet)
 - introduce [enums](https://www.ribice.ba/golang-enums/)
 - introduce constants
 - improve `inventory.Contains` check

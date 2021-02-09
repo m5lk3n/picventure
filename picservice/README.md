@@ -9,7 +9,7 @@ The service offers the following two endpoints (response is always JSON):
 - /api/v1/screen/clear
   - returns HTTP 200 along with a message
 - /api/v1/screen/draw/:pic
-  - where :pic has the following values: key, monster, potion, victory
+  - where :pic is one of the following values: key, monster, potion, victory
   - returns
     - HTTP 200 along with a message in case of success
     - HTTP 400 in case of malformed request (no input)
