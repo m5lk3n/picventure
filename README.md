@@ -81,9 +81,11 @@ Inventory:
 
 ![Make and play](spoiler.gif)
 
-When you encounter a key:
+When you encounter an item or finish the game, the corresponding picture appears on the Sense HAT:
 
-![Key](sense/key-on-sense.png)
+![Sense HAT output](sense/all.gif)
+
+([from Trinket and the Raspberry Pi Foundation](https://trinket.io/sense-hat))
 
 ## Originals
 
@@ -92,7 +94,7 @@ When you encounter a key:
 
 ## To do/Open
 
-- remaining Sense pictures
+- remove terminalizer
 - map (cheatsheet)
 - add tests
 - introduce [enums](https://www.ribice.ba/golang-enums/)
