@@ -2,6 +2,10 @@
 
 The RPG text adventure project from under [raspberrypi.org](https://projects.raspberrypi.org/en/projects/rpg) implemented in Go for educational purposes. It features colors (on the terminal) and game pictures (on a Sense HAT). The latter is locally exposed as a "web service" (called "picservice") and loosely coupled to the game implementation. The idea is to also demo microservices to kids.
 
+## Design
+
+![Design](design.png)
+
 ## Environments
 
 Developed on a [Raspberry Pi 400](https://www.raspberrypi.org/products/raspberry-pi-400/):
