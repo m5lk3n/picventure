@@ -66,9 +66,9 @@ func drawAndClearPic(pic string) {
 }
 
 func printRoom() {
-	pterm.FgLightWhite.Println("You are in the ", currentRoom)
+	pterm.FgLightWhite.Println("You are in the", currentRoom)
 	if roomItem, ok := items[currentRoom]; ok {
-		pterm.Println("You see a ", roomItem)
+		pterm.Println("You see a", roomItem)
 		drawPic(roomItem)
 	} else {
 		clearPic()

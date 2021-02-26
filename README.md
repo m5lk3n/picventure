@@ -21,9 +21,9 @@ Also tested on a Lenovo ThinkPad X250:
 
 ```bash
 $ uname -a
-Linux x250 4.15.0-128-generic #131-Ubuntu SMP Wed Dec 9 06:57:35 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+Linux x250 4.15.0-135-generic #139-Ubuntu SMP Mon Jan 18 17:38:24 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
 $ go version
-go version go1.15.6 linux/amd64
+go version go1.16 linux/amd64
 ```
 
 ## Make
